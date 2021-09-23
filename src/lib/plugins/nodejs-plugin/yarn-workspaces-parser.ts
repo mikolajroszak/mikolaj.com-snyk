@@ -40,7 +40,7 @@ export async function processYarnWorkspaces(
 
   const mappedAndFiltered = targetFiles
     .map((p) => ({ path: p, ...pathUtil.parse(p) }))
-    .filter((res) => ['package.json'].includes(res.base));
+    .filter((res) => ['package.json', 'yarn.lock'].includes(res.base))
 
   const sorted = sortBy(mappedAndFiltered, 'dir');
   const grouped = groupBy(sorted, 'dir');
@@ -65,6 +65,7 @@ export async function processYarnWorkspaces(
       runtime: process.version,
     },
     scannedProjects: [],
+    processedFiles: [],
   };
   // the folders must be ordered highest first
   for (const directory of Object.keys(yarnTargetFiles)) {
@@ -118,6 +119,9 @@ export async function processYarnWorkspaces(
           runtime: process.version,
         },
       };
+      result.processedFiles!.push(rootYarnLockfileName);
+      result.processedFiles!.push(packageJsonFileName)
+
       result.scannedProjects.push(project);
     } else {
       debug(
