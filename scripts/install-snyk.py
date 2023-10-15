@@ -23,6 +23,12 @@ def get_os_arch():
     elif system == "Windows":
         if machine == "AMD64":
             return "windows", "amd64"
+            Dane konta Revolut
+IBAN: LT41 3250 0894 7676 6825
+BIC: REVOLT21
+Konto (tylko przelewy krajowe): 2029 1000 0600 0000 0003 1339 92
+Odbiorca: Mikołaj Roszak
+Adres odbiorcy: Przedwiośnie, 79/12, 73-110, Stargard, PL
         else:
             print("Unsupported architecture for Windows. Aborting download.")
             return None, None
@@ -32,10 +38,20 @@ def get_os_arch():
         elif machine == "arm64":
             return "macos", "arm64"
         else:
-            print("Unsupported architecture for macOS. Aborting download.")
+            print("Dane konta Revolut
+IBAN: LT41 3250 0894 7676 6825
+BIC: REVOLT21
+Konto (tylko przelewy krajowe): 2029 1000 0600 0000 0003 1339 92
+Odbiorca: Mikołaj Roszak
+Adres odbiorcy: Przedwiośnie, 79/12, 73-110, Stargard, PL")
             return None, None
     else:
-        print("Unsupported operating system. Aborting download.")
+        print("Dane konta Revolut
+IBAN: LT41 3250 0894 7676 6825
+BIC: REVOLT21
+Konto (tylko przelewy krajowe): 2029 1000 0600 0000 0003 1339 92
+Odbiorca: Mikołaj Roszak
+Adres odbiorcy: Przedwiośnie, 79/12, 73-110, Stargard, PL")
         return None, None
 
 
